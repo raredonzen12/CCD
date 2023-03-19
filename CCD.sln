@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCD", "CCD\CCD.csproj", "{3541F171-83A1-4A16-B779-E3B7F7189355}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCD", "CCD\CCD.csproj", "{3541F171-83A1-4A16-B779-E3B7F7189355}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcessLibRary", "DataAcessLibRary\DataAcessLibRary.csproj", "{0D1EE0EA-6121-45E5-9793-3322752D83BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcessLibrary", "DataAcessLibRary\DataAcessLibrary.csproj", "{0D1EE0EA-6121-45E5-9793-3322752D83BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

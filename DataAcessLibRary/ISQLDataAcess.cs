@@ -1,6 +1,6 @@
-﻿namespace DataAcessLibRary
+﻿namespace DataAcessLibrary
 {
-    internal interface ISQLDataAcess
+    public interface ISQLDataAcess
     {
         string ConnectionStringName { get; set; }
 

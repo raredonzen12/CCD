@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAcessLibRary
+namespace DataAcessLibrary
 {
-    internal class SQLDataAcess : ISQLDataAcess
+    public class SQLDataAcess : ISQLDataAcess
     {
         private readonly IConfiguration config;
 

@@ -1,4 +1,5 @@
 using CCD.Data;
+using DataAcessLibrary;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -14,6 +15,8 @@ namespace CCD
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
             builder.Services.AddSingleton<WeatherForecastService>();
+            builder.Services.AddTransient<ISQLDataAcess, SQLDataAcess>();
+            builder.Services.AddTransient<ICardDetails, CardDetails>();
 
             var app = builder.Build();
 
