@@ -31,7 +31,7 @@ namespace CCD.Authentication
             }, "CustomAuth"));
                 return await Task.FromResult(new AuthenticationState(claimsPrincipal));
             }
-            catch (Exception ex)
+            catch
             {
                 return await Task.FromResult(new AuthenticationState(_anonymous));
             }

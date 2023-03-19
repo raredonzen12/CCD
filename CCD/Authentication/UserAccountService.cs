@@ -11,7 +11,8 @@ namespace CCD.Authentication
             _users = new List<UserModel>
             {
                 new UserModel { LoginName = "admin", Password = "admin", Role = "Administrator" },
-                new UserModel { LoginName = "user", Password = "user", Role = "User" }
+                new UserModel { LoginName = "user", Password = "user", Role = "User" },
+                new UserModel { LoginName = "Sadmin", Password="sadmin", Role= "SuperAdmin"}
             };
             
         }

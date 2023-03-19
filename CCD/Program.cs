@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.AspNetCore.Components.Web;
 using CCD.Authentication;
+using System.Runtime.InteropServices;
 
 namespace CCD
 {
@@ -12,6 +13,11 @@ namespace CCD
     {
         public static void Main(string[] args)
         {
+            if (OperatingSystem.IsWindows())
+            {
+                AllocConsole();
+            }
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -26,6 +32,12 @@ namespace CCD
             builder.Services.AddTransient<ICardDetails, CardDetails>();
 
             var app = builder.Build();
+
+            if (OperatingSystem.IsWindows())
+            {
+                FreeConsole();
+            }
+
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -46,5 +58,14 @@ namespace CCD
 
             app.Run();
         }
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool FreeConsole();
+
     }
 }
