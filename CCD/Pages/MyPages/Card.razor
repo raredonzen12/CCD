@@ -1,4 +1,5 @@
 ﻿@page "/Data/Card"
+@attribute [Authorize(Roles = "Administartor")]
 
 @using DataAcessLibrary
 @using DataAcessLibrary.Models
@@ -8,33 +9,33 @@
 
 <h1>Card Detailes</h1>
 <h4>Current cards</h4>
-@if(card is null)
- {
+@if (card is null)
+{
     <p><em>Loading...</em></p>
- }
+}
 else
 {
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th> AgencyId</th>
-            <th>InvoiceId</th>
-            <th>CustomerId</th>
-            <th>Customer Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var cd in card)
-         {
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>@cd.AgencyId</td>
-                <td>@cd.InvoiceId</td>
-                <td>@cd.CustomerID</td>
-                <td>@cd.CustomerName</td>
+                <th> AgencyId</th>
+                <th>InvoiceId</th>
+                <th>CustomerId</th>
+                <th>Customer Name</th>
             </tr>
-         }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var cd in card)
+            {
+                <tr>
+                    <td>@cd.AgencyId</td>
+                    <td>@cd.InvoiceId</td>
+                    <td>@cd.CustomerID</td>
+                    <td>@cd.CustomerName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 
 

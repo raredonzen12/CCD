@@ -23,6 +23,13 @@ namespace DataAcessLibrary
             return db.LoadData<CardModel, dynamic>(sql, new { });
         }
 
+        public Task<List<UserModel>> GetUsers()
+        {
+            string sql = "SELECT * FROM  dbo.UserData";
+            return db.LoadData<UserModel, dynamic>(sql, new { });
+        }
+
+
         public Task InsertCard(CardModel card)
         {
             string sql = @"insert into dbo.CARD(AgencyId, InoviceId, CustomeId, CustomerName)
